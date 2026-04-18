@@ -1,0 +1,249 @@
+{
+  "version": "1.0",
+  "categories": [
+    {
+      "id": "project_assets",
+      "name": "Project Assets",
+      "scoring_name": "Deliverable Definition Completeness",
+      "criteria": [
+        {
+          "id": "acceptance_criteria",
+          "name": "Acceptance Criteria Clarity",
+          "weight": 40,
+          "description": {
+            "1": "No acceptance criteria; impossible to judge completion",
+            "2": "Vague description; significant differences in individual understanding",
+            "3": "Criteria exist but with uncovered boundary scenarios",
+            "4": "Clear criteria; consistent understanding across all parties",
+            "5": "Clear criteria; verified as executable through rehearsals or pre-acceptance"
+          }
+        },
+        {
+          "id": "ownership",
+          "name": "Responsibility Attribution Clarity",
+          "weight": 30,
+          "description": {
+            "1": "No owner assigned",
+            "2": "Owner assigned but responsibility boundaries are vague",
+            "3": "Owner clear, but cross-team parts are not clarified",
+            "4": "Both owner and responsibility boundaries are clear",
+            "5": "Owner clear; confirmed in person and recorded"
+          }
+        },
+        {
+          "id": "timeliness",
+          "name": "Information Timeliness",
+          "weight": 30,
+          "description": {
+            "1": "Not updated for over 30 days while project is ongoing",
+            "2": "Not updated for 14-30 days",
+            "3": "Not updated for 7-14 days",
+            "4": "Updated within 3-7 days",
+            "5": "Updated within 3 days; consistent with current project status"
+          }
+        }
+      ]
+    },
+    {
+      "id": "process_rules",
+      "name": "Process Rules",
+      "scoring_name": "Process Item Executability",
+      "criteria": [
+        {
+          "id": "executability",
+          "name": "Step Executability",
+          "weight": 40,
+          "description": {
+            "1": "Only principle-based expressions; no operational steps",
+            "2": "General direction provided but missing specific trigger conditions or steps",
+            "3": "Steps exist, but key details or prerequisites are missing",
+            "4": "Steps, trigger conditions, and owners are all clear",
+            "5": "Complete and verified through actual execution in the project"
+          }
+        },
+        {
+          "id": "exception_coverage",
+          "name": "Exception Branch Coverage",
+          "weight": 35,
+          "description": {
+            "1": "No exception handling instructions",
+            "2": "Exceptions mentioned but no handling path provided",
+            "3": "Covers common exceptions; extreme cases missing",
+            "4": "Covers major exceptions, including escalation paths",
+            "5": "Full scenario coverage, including rollback plans and escalation contacts"
+          }
+        },
+        {
+          "id": "conflict_check",
+          "name": "Conflict with Other Processes",
+          "weight": 25,
+          "description": {
+            "1": "Known conflicts exist and are unhandled",
+            "2": "Not checked for conflicts",
+            "3": "Checked; low-priority conflicts pending handling",
+            "4": "No conflicts; manually confirmed",
+            "5": "No conflicts; confirmed with records and periodic reviews"
+          }
+        }
+      ]
+    },
+    {
+      "id": "project_semantics",
+      "name": "Project Semantics",
+      "scoring_name": "Glossary and Definition Quality",
+      "criteria": [
+        {
+          "id": "definition_clarity",
+          "name": "Definition Clarity",
+          "weight": 35,
+          "description": {
+            "1": "Definition missing or extremely vague; varying understanding among team members",
+            "2": "Basic definition exists but key boundaries are not explained",
+            "3": "Clear definition, but boundary scenarios are not covered",
+            "4": "Both definition and boundaries are clear",
+            "5": "Definition, boundaries, and examples are all complete; team is aligned"
+          }
+        },
+        {
+          "id": "team_alignment",
+          "name": "Team Alignment",
+          "weight": 40,
+          "description": {
+            "1": "Team members use different understandings and not recorded",
+            "2": "Ambiguity exists; not formally aligned",
+            "3": "Some members aligned, others not confirmed",
+            "4": "Entire team aligned; recorded in meetings or documents",
+            "5": "Entire team aligned; external stakeholders also confirmed"
+          }
+        },
+        {
+          "id": "last_confirmed",
+          "name": "Last Confirmation Time",
+          "weight": 25,
+          "description": {
+            "1": "Never formally confirmed since project kickoff",
+            "2": "Not confirmed for over 60 days",
+            "3": "Confirmed within 30-60 days",
+            "4": "Confirmed within 14-30 days",
+            "5": "Confirmed within 14 days; recorded"
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "name": "Experience Accumulation",
+      "scoring_name": "Decision Record Quality",
+      "criteria": [
+        {
+          "id": "context_completeness",
+          "name": "Context Completeness",
+          "weight": 30,
+          "description": {
+            "1": "Only conclusion recorded; no background or options",
+            "2": "Background exists but no candidate options",
+            "3": "Both background and options exist, but assessment criteria are missing",
+            "4": "Background, options, and assessment criteria are all complete",
+            "5": "Complete and recorded key constraints at the time of decision"
+          }
+        },
+        {
+          "id": "traceability",
+          "name": "Traceability",
+          "weight": 35,
+          "description": {
+            "1": "Unknown maker and time of decision",
+            "2": "Decision maker known, but time and basis unknown",
+            "3": "Maker and time clear, but basis incomplete",
+            "4": "Maker, time, and basis are all clear",
+            "5": "Complete; original discussion records or meeting minutes available"
+          }
+        },
+        {
+          "id": "transferability",
+          "name": "Transferability",
+          "weight": 35,
+          "description": {
+            "1": "Highly dependent on the context at the time; cannot be reused",
+            "2": "Partial reuse value but not distilled",
+            "3": "Lessons learned distilled, but applicable conditions not stated",
+            "4": "Lessons learned completely distilled; applicable conditions clear",
+            "5": "Experience complete; verified as reusable in other scenarios"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sop",
+      "name": "Operating Procedures",
+      "scoring_name": "SOP Completeness",
+      "criteria": [
+        {
+          "id": "step_completeness",
+          "name": "Step Completeness",
+          "weight": 35,
+          "description": {
+            "1": "Steps seriously missing; cannot be executed based on document",
+            "2": "Major steps exist but key details missing",
+            "3": "Major steps complete but some details missing",
+            "4": "Complete steps, including input/output/prerequisites",
+            "5": "Complete steps with examples; new members can execute independently"
+          }
+        },
+        {
+          "id": "exception_coverage",
+          "name": "Exception Branch Coverage",
+          "weight": 35,
+          "description": {
+            "1": "No exception handling instructions",
+            "2": "Exceptions mentioned but no handling path provided",
+            "3": "Covers common exceptions; extreme cases missing",
+            "4": "Covers major exceptions, including escalation paths and rollback plans",
+            "5": "Full scenario coverage, including rollback steps and escalation contacts"
+          }
+        },
+        {
+          "id": "last_executed",
+          "name": "Last Execution Verification",
+          "weight": 30,
+          "description": {
+            "1": "Never actually executed",
+            "2": "Not executed for over 6 months",
+            "3": "Executed within 3-6 months",
+            "4": "Executed within 1-3 months",
+            "5": "Executed within 1 month; execution records available"
+          }
+        }
+      ]
+    }
+  ],
+  "priority_rules": {
+    "P0": {
+      "label": "Urgent",
+      "conditions": [
+        "Composite score ≤ 1.5",
+        "Single item score of 1 with weight ≥ 30%",
+        "Within 3 days of a milestone"
+      ]
+    },
+    "P1": {
+      "label": "High",
+      "conditions": [
+        "Composite score 1.6-2.5",
+        "Open decision unresolved for > 2 days"
+      ]
+    },
+    "P2": {
+      "label": "Medium",
+      "conditions": [
+        "Composite score 2.6-3.5"
+      ]
+    },
+    "P3": {
+      "label": "Low",
+      "conditions": [
+        "Composite score > 3.5"
+      ]
+    }
+  }
+}
