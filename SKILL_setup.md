@@ -24,9 +24,33 @@ Daily maintenance, health checks, change management, and closing migration are f
 | Other files | Templates, tables, raw attachments (`.xlsx/.pdf`, etc.) | Place in `/raw` read-only zone |
 | Folder | Organizes hierarchical structure | See directory standards below |
 
+### ⚠️ Critical: Content-First, Index-Last Workflow
+
+> **The #1 rule for building a Wiki: NEVER create empty files.** Every file must have meaningful content written into it at creation time. Follow this strict order:
+
+```
+✅ Correct Order:
+1. Plan which content entries are needed (do NOT create any files yet)
+2. Write a content .md file with FULL content → save it
+3. Repeat step 2 for all content files in the same directory
+4. ONLY AFTER the directory has ≥1 content file WITH real content written,
+   create the _index.md for that directory (referencing the real files)
+5. Work upward: create parent _index.md only after child directories are populated
+
+❌ NEVER do this:
+- Create an empty directory "for later"
+- Create a placeholder _index.md before content files exist
+- Create any .md file without writing its full content in the same step
+- Batch-create the entire directory tree skeleton first
+```
+
+> **Rationale**: Pre-creating empty files and directories pollutes the Wiki with zero-value artifacts that are difficult to track and clean up. A healthy Wiki grows organically — each file is born with content.
+
 ### Directory Standards
 
 The Wiki directory structure supports **hierarchical nesting**, adapting to various scales from simple projects to large, complex ones. Each level uses an `_index.md` index file to provide an overview and navigation for that level.
+
+> **Remember**: Directories and `_index.md` files are created **after** their content files are written, not before. See the Content-First workflow above.
 
 #### Level Design Principles
 
@@ -156,6 +180,8 @@ The Wiki directory structure supports **hierarchical nesting**, adapting to vari
 
 #### `_index.md` Index File Standard
 
+> **Prerequisite**: Only create `_index.md` **after** the directory already contains at least one content file with real written content. Never create it as the first file in a directory.
+
 The `_index.md` in each directory is the **navigation hub** for that level and must include:
 
 ```markdown
@@ -171,6 +197,8 @@ The `_index.md` in each directory is the **navigation hub** for that level and m
 |------|------|----------|
 | 2024-03-15 | OAuth2Integration.md | Added third-party login flow |
 ```
+
+> **Navigation links must point to files that already exist with content.** Do not add links to planned-but-not-yet-created files.
 
 #### Naming Conventions
 
