@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "categories": [
     {
       "id": "project_assets",
@@ -9,7 +9,6 @@
         {
           "id": "acceptance_criteria",
           "name": "Acceptance Criteria Clarity",
-          "weight": 40,
           "description": {
             "1": "No acceptance criteria; impossible to judge completion",
             "2": "Vague description; significant differences in individual understanding",
@@ -21,7 +20,6 @@
         {
           "id": "ownership",
           "name": "Responsibility Attribution Clarity",
-          "weight": 30,
           "description": {
             "1": "No owner assigned",
             "2": "Owner assigned but responsibility boundaries are vague",
@@ -33,7 +31,6 @@
         {
           "id": "timeliness",
           "name": "Information Timeliness",
-          "weight": 30,
           "description": {
             "1": "Not updated for over 30 days while project is ongoing",
             "2": "Not updated for 14-30 days",
@@ -52,7 +49,6 @@
         {
           "id": "executability",
           "name": "Step Executability",
-          "weight": 40,
           "description": {
             "1": "Only principle-based expressions; no operational steps",
             "2": "General direction provided but missing specific trigger conditions or steps",
@@ -64,7 +60,6 @@
         {
           "id": "exception_coverage",
           "name": "Exception Branch Coverage",
-          "weight": 35,
           "description": {
             "1": "No exception handling instructions",
             "2": "Exceptions mentioned but no handling path provided",
@@ -76,7 +71,6 @@
         {
           "id": "conflict_check",
           "name": "Conflict with Other Processes",
-          "weight": 25,
           "description": {
             "1": "Known conflicts exist and are unhandled",
             "2": "Not checked for conflicts",
@@ -95,7 +89,6 @@
         {
           "id": "definition_clarity",
           "name": "Definition Clarity",
-          "weight": 35,
           "description": {
             "1": "Definition missing or extremely vague; varying understanding among team members",
             "2": "Basic definition exists but key boundaries are not explained",
@@ -107,7 +100,6 @@
         {
           "id": "team_alignment",
           "name": "Team Alignment",
-          "weight": 40,
           "description": {
             "1": "Team members use different understandings and not recorded",
             "2": "Ambiguity exists; not formally aligned",
@@ -119,7 +111,6 @@
         {
           "id": "last_confirmed",
           "name": "Last Confirmation Time",
-          "weight": 25,
           "description": {
             "1": "Never formally confirmed since project kickoff",
             "2": "Not confirmed for over 60 days",
@@ -138,7 +129,6 @@
         {
           "id": "context_completeness",
           "name": "Context Completeness",
-          "weight": 30,
           "description": {
             "1": "Only conclusion recorded; no background or options",
             "2": "Background exists but no candidate options",
@@ -150,7 +140,6 @@
         {
           "id": "traceability",
           "name": "Traceability",
-          "weight": 35,
           "description": {
             "1": "Unknown maker and time of decision",
             "2": "Decision maker known, but time and basis unknown",
@@ -162,7 +151,6 @@
         {
           "id": "transferability",
           "name": "Transferability",
-          "weight": 35,
           "description": {
             "1": "Highly dependent on the context at the time; cannot be reused",
             "2": "Partial reuse value but not distilled",
@@ -181,7 +169,6 @@
         {
           "id": "step_completeness",
           "name": "Step Completeness",
-          "weight": 35,
           "description": {
             "1": "Steps seriously missing; cannot be executed based on document",
             "2": "Major steps exist but key details missing",
@@ -193,7 +180,6 @@
         {
           "id": "exception_coverage",
           "name": "Exception Branch Coverage",
-          "weight": 35,
           "description": {
             "1": "No exception handling instructions",
             "2": "Exceptions mentioned but no handling path provided",
@@ -205,7 +191,6 @@
         {
           "id": "last_executed",
           "name": "Last Execution Verification",
-          "weight": 30,
           "description": {
             "1": "Never actually executed",
             "2": "Not executed for over 6 months",
@@ -221,28 +206,28 @@
     "P0": {
       "label": "Urgent",
       "conditions": [
-        "Composite score ≤ 1.5",
-        "Single item score of 1 with weight ≥ 30%",
-        "Within 3 days of a milestone"
+        "综合评分 ≤ 30分",
+        "任意单项评分为 1",
+        "里程碑 3 天内"
       ]
     },
     "P1": {
       "label": "High",
       "conditions": [
-        "Composite score 1.6-2.5",
-        "Open decision unresolved for > 2 days"
+        "综合评分 31-50分",
+        "开放决策超 2 天未关闭"
       ]
     },
     "P2": {
       "label": "Medium",
       "conditions": [
-        "Composite score 2.6-3.5"
+        "综合评分 51-70分"
       ]
     },
     "P3": {
       "label": "Low",
       "conditions": [
-        "Composite score > 3.5"
+        "综合评分 > 70分"
       ]
     }
   }

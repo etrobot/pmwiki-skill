@@ -3,7 +3,7 @@
 Project Wiki Scoring Calculation Script
 
 LLM is responsible for individual item scoring (outputting JSON). This script handles:
-  - Weighted summation → Composite score
+  - Equal-weight average → Composite score
   - Priority calculation (P0-P3)
   - Outputting human-readable score reports
   - Batch processing multiple entries, outputting summary statistics
@@ -29,27 +29,26 @@ from typing import Optional
 
 # ─── Priority Rules ────────────────────────────────────────────────────────────
 
-def get_priority(composite_score: float, scores: dict, criteria: list,
+def get_priority(composite_pct: int, scores: dict,
                  milestone_urgent: bool = False) -> str:
     """
-    Determines priority based on composite score and individual item scores.
+    Determines priority based on 100-point composite score and individual item scores.
     milestone_urgent: Whether it is within 3 days of a milestone (passed externally)
     """
     if milestone_urgent:
         return "P0"
 
-    # Check if any individual item score is 1 and weight >= 30%
-    weight_map = {c["id"]: c["weight"] for c in criteria}
-    for cid, info in scores.items():
+    # Any single dimension score of 1 → P0
+    for info in scores.values():
         score_val = info["score"] if isinstance(info, dict) else info
-        if score_val == 1 and weight_map.get(cid, 0) >= 30:
+        if score_val == 1:
             return "P0"
 
-    if composite_score <= 1.5:
+    if composite_pct <= 30:
         return "P0"
-    elif composite_score <= 2.5:
+    elif composite_pct <= 50:
         return "P1"
-    elif composite_score <= 3.5:
+    elif composite_pct <= 70:
         return "P2"
     else:
         return "P3"
@@ -92,31 +91,28 @@ def compute_composite(entry: dict, criteria_db: dict,
     if missing:
         raise ValueError(f"Missing scoring dimensions: {missing}")
 
-    # Weighted summation
+    # Equal-weight average
+    n = len(criteria)
     detail_lines = []
-    composite = 0.0
-    total_weight = sum(c["weight"] for c in criteria)
+    total = 0.0
 
     for c in criteria:
         cid = c["id"]
         raw = scores_input[cid]
         score_val = raw["score"] if isinstance(raw, dict) else int(raw)
         reason = raw.get("reason", "") if isinstance(raw, dict) else ""
-        weight = c["weight"]
-        contribution = score_val * weight / 100
 
-        composite += contribution
+        total += score_val
         detail_lines.append({
             "criterion_id": cid,
             "criterion_name": c["name"],
             "score": score_val,
-            "weight": weight,
-            "contribution": round(contribution, 4),
             "reason": reason
         })
 
-    composite = round(composite, 4)
-    priority = get_priority(composite, scores_input, criteria, milestone_urgent)
+    avg = total / n
+    composite_pct = round(avg * 20)  # Convert to 100-point scale
+    priority = get_priority(composite_pct, scores_input, milestone_urgent)
 
     return {
         "entry_id": entry.get("entry_id", "unknown"),
@@ -124,10 +120,10 @@ def compute_composite(entry: dict, criteria_db: dict,
         "category_id": category_id,
         "category_name": category_cfg["name"],
         "scoring_name": category_cfg["scoring_name"],
-        "composite_score": composite,
+        "composite_score": composite_pct,
         "priority": priority,
         "detail": detail_lines,
-        "total_weight_check": total_weight   # Should be 100
+        "dimensions": n
     }
 
 
@@ -146,15 +142,14 @@ def render_report(result: dict) -> str:
     lines.append("─" * 55)
 
     for d in result["detail"]:
-        reason_snippet = f"  [{d['reason'][:30]}...]" if d["reason"] else ""
+        reason_snippet = f"  [{d['reason'][:40]}...]" if d["reason"] else ""
         lines.append(
-            f"  {d['criterion_name']:<14} {d['score']}pt × {d['weight']:>2}% "
-            f"= {d['contribution']:.2f}{reason_snippet}"
+            f"  {d['criterion_name']:<24} {d['score']}pt{reason_snippet}"
         )
 
     lines.append("─" * 55)
     lines.append(
-        f"Composite Score: {result['composite_score']:.2f} / 5.0   ▶ {priority_label}"
+        f"Composite Score: {result['composite_score']} / 100   ▶ {priority_label}"
     )
     return "\n".join(lines)
 
@@ -180,7 +175,7 @@ def render_batch_summary(results: list) -> str:
     lines.append("\nAverage Score by Category:")
     for cat, scores in sorted(category_scores.items()):
         avg = sum(scores) / len(scores)
-        lines.append(f"  {cat:<12} Avg {avg:.2f}  ({len(scores)} entries)")
+        lines.append(f"  {cat:<24} Avg {avg:.2f}  ({len(scores)} entries)")
 
     p0_items = [r for r in results if r["priority"] == "P0"]
     if p0_items:
@@ -209,13 +204,13 @@ def load_criteria(criteria_path: str) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Project Wiki Scoring Calculation Script (Weighted Sum + Priority)"
+        description="Project Wiki Scoring Calculation Script (Equal-Weight Average + Priority)"
     )
     parser.add_argument("--input", "-i", help="LLM scoring JSON file path")
     parser.add_argument("--json", "-j", help="Directly pass LLM scoring JSON string")
     parser.add_argument("--criteria", "-c",
-                        default="references/scoring_criteria.json",
-                        help="Scoring criteria JSON file path (default: references/scoring_criteria.json)")
+                        default="scoring_criteria.json",
+                        help="Scoring criteria JSON file path (default: scoring_criteria.json)")
     parser.add_argument("--batch", "-b", action="store_true",
                         help="Batch mode: input is a JSON array containing multiple entries")
     parser.add_argument("--milestone-urgent", "-m", action="store_true",

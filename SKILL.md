@@ -5,7 +5,7 @@ description: Main entry point for the Project Management Wiki system. Use this S
 
 # Project Wiki Skill Entry Point
 
-This Skill is divided into two sub-Skills. Select one based on user intent:
+Select a sub-Skill based on user intent:
 
 ---
 
@@ -13,38 +13,41 @@ This Skill is divided into two sub-Skills. Select one based on user intent:
 
 | User Intent | Loaded Skill |
 |-------------|--------------|
-| Build Wiki directory structure from scratch | → [`SKILL_setup.md`](./SKILL_setup.md) |
-| Score / Assess quality of an entry | → [`SKILL_setup.md`](./SKILL_setup.md) |
-| Understand Wiki content classification | → [`SKILL_setup.md`](./SKILL_setup.md) |
-| Daily Wiki update process | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
+| Build Wiki from scratch / Choose mode | → [`SKILL_lintstart.md`](./SKILL_lintstart.md) |
+| Lightstart mode (new project) | → [`SKILL_lintstart.md`](./SKILL_lintstart.md) |
+| Precise mode / Layer templates | → [`SKILL_iteration.md`](./SKILL_iteration.md) |
+| How to write Architecture/Data/Business/Interaction/QA | → [`SKILL_iteration.md`](./SKILL_iteration.md) |
+| Evaluate entry quality / Scoring | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
+| Daily Wiki updates / Evaluate → Improve | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
 | Weekly health check / Milestone check | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
-| Record changes / Decisions | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
-| Project closing knowledge transfer | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
+| Record changes / Decisions / Closing migration | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
 
 ---
 
 ## Sub-Skill Overview
 
-### SKILL_setup.md — Setup and Scoring
-Applicable for **initial setup** or **entry quality assessment**:
-- Wiki physical structure (hierarchical nesting standards, `_index.md` standards)
-- Five major content classification systems
-- Scoring dimensions and priority rules
-- LLM scoring prompt + scoring script usage
-- Scoring result storage and retrieval (`_scores/` directory)
+### SKILL_lintstart.md — Lightstart
+- Comparison of two modes (Lightstart vs Precise)
+- Lightstart directory structure
+- General rules (README facade, asset management, naming conventions)
 
-### SKILL_maintenance.md — Maintenance and Checks
-Applicable for **daily operations** and **regular reviews**:
-- Daily update process (Execution layer / Revision layer collaboration)
-- Weekly health check items (Orphans, contradictions, timeliness, index, etc.)
-- Milestone-specific checks
-- Rapid lookup of trigger mechanisms
-- Change record / Decision record templates
-- Project closing knowledge transfer
+### SKILL_iteration.md — Iteration Mode + Layer Templates
+- Precise mode complete directory structure + splitting timing
+- Architecture layer template (tech stack, coding standards, infrastructure, ADR)
+- Data layer template (data model, dictionary, cache, migration, security)
+- Business layer template (core flows, business rules, API, module design)
+- Interaction layer template (UI standards, components, user paths)
+- QA template (test cases, automation, incident postmortem)
+
+### SKILL_maintenance.md — Evaluation & Improvement
+- Evaluation system (scoring dimensions, priority, workflow, storage)
+- Daily process: Evaluate → Improve
+- Weekly health check / Milestone check
+- Trigger mechanism / Change management / Closing migration
 
 ---
 
 ## Reference Files
 
-- `scoring_criteria.json` — Complete scoring criteria for five categories
-- `scorer.py` — Weighted calculation script
+- `scoring_criteria.json` — Complete scoring criteria for five categories (equal weight)
+- `scorer.py` — Mean calculation script (100-point scale)
