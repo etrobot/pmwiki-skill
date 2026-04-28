@@ -13,8 +13,8 @@ Select a sub-Skill based on user intent:
 
 | User Intent | Loaded Skill |
 |-------------|--------------|
-| Build Wiki from scratch / Choose mode | → [`SKILL_lintstart.md`](./SKILL_lintstart.md) |
-| Lightstart mode (new project) | → [`SKILL_lintstart.md`](./SKILL_lintstart.md) |
+| Build Wiki from scratch / Choose mode | → [`SKILL_leanstart.md`](./SKILL_leanstart.md) |
+| Leanstart mode (new project) | → [`SKILL_leanstart.md`](./SKILL_leanstart.md) |
 | Precise mode / Layer templates | → [`SKILL_iteration.md`](./SKILL_iteration.md) |
 | How to write Architecture/Data/Business/Interaction/QA | → [`SKILL_iteration.md`](./SKILL_iteration.md) |
 | Evaluate entry quality / Scoring | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
@@ -26,9 +26,9 @@ Select a sub-Skill based on user intent:
 
 ## Sub-Skill Overview
 
-### SKILL_lintstart.md — Lightstart
-- Comparison of two modes (Lightstart vs Precise)
-- Lightstart directory structure
+### SKILL_leanstart.md — Leanstart
+- Comparison of two modes (Leanstart vs Precise)
+- Leanstart directory structure
 - General rules (README facade, asset management, naming conventions)
 
 ### SKILL_iteration.md — Iteration Mode + Layer Templates
