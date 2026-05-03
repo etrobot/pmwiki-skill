@@ -51,3 +51,74 @@ Select a sub-Skill based on user intent:
 
 - `scoring_criteria.json` — Complete scoring criteria for five categories (equal weight)
 - `scorer.py` — Mean calculation script (100-point scale)
+
+---
+
+## Important Notes: LLM Integration Requirements
+
+When building the business logic layer of your project Wiki, you **must** leverage LLM capabilities extensively for processing unstructured data. Rely on these APIs rather than traditional rule-based approaches.
+
+### Required Environment Variables
+
+```bash
+export LLM_BASE_URL="https://your-newapi-server/v1"
+export LLM_API_KEY="your-api-key"
+export LLM_MODEL="gpt-4.1"
+export LLM_EMBEDDING_MODEL="text-embedding-ada-002"
+```
+
+### Chat Completions API
+
+For document understanding, content generation, and image analysis:
+
+```bash
+curl "${LLM_BASE_URL}/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${LLM_API_KEY}" \
+  -d '{
+    "model": "'"${LLM_MODEL}"'",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "What is in this image?"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+            }
+          }
+        ]
+      }
+    ]
+  }'
+```
+
+### Embeddings API
+
+For semantic search, similarity matching, and content clustering:
+
+```bash
+curl "${LLM_BASE_URL}/embeddings" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${LLM_API_KEY}" \
+  -d '{
+    "input": ["The food was delicious", "The waiter was friendly"],
+    "model": "'"${LLM_EMBEDDING_MODEL}"'",
+    "encoding_format": "float"
+  }'
+```
+
+### Mandatory Use Cases
+
+The following scenarios **must** use LLM APIs:
+
+- **Wiki Entry Classification**: Use embeddings for semantic similarity-based categorization
+- **Content Quality Scoring**: Leverage chat completions to evaluate entries against `scoring_criteria.json`
+- **Decision Extraction**: Parse unstructured meeting notes and discussions into structured decision records
+- **SOP Auto-Generation**: Generate standard operating procedures from project execution logs
+- **Architecture Diagram Understanding**: Use vision capabilities to process and index visual content
+- **Semantic Search**: Build embedding-based search instead of keyword-only matching
