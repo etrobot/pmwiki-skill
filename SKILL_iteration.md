@@ -21,6 +21,7 @@ docs/
 ├── 01-architecture/         # [Architecture Layer]
 │   ├── tech-stack.md        # Tech stack + coding standards
 │   ├── infrastructure.md    # Servers, network, CI/CD pipeline
+│   ├── ops-capability.md    # Operations: logging, alerting, cron jobs timeline
 │   └── decisions/           # Architecture decision records: "why this design"
 │
 ├── 02-data/                 # [Data Layer]
@@ -75,6 +76,7 @@ The architecture layer answers "how the system is built, and why":
 | Tech Stack | What tech is used, why it was chosen | Next.js vs Tanstack Start selection rationale |
 | Coding Standards | Code style, directory structure, naming conventions | ESLint config, Git branch strategy |
 | Infrastructure | Servers, network, CI/CD | Deployment topology, pipeline configuration |
+| Operations Capability | When to introduce logging, alerting, cron jobs | See [`SKILL_ops.md`](./SKILL_ops.md) for detailed timeline |
 | Architecture Decisions | "Why" behind key designs | Why microservices, why event-driven |
 
 ### How to Write
@@ -93,6 +95,9 @@ The architecture layer answers "how the system is built, and why":
 ## Infrastructure
 [Deployment topology, server configuration, CI/CD pipeline]
 
+## Operations Capability
+[When to introduce cron jobs, logging, alerting - see SKILL_ops.md for detailed guidance]
+
 ## Architecture Decision Records
 ### ADR-001: [Decision Title]
 - Context: [Why this decision is needed]
@@ -102,6 +107,8 @@ The architecture layer answers "how the system is built, and why":
 ```
 
 > **Core Principle**: Architecture decisions must record "why", not just "what". Future readers should understand the constraints and trade-offs at the time by reading the ADR.
+
+> **Operations Capability**: For detailed guidance on when to introduce cron jobs, logging systems, alerting, and other operational capabilities, refer to [`SKILL_ops.md`](./SKILL_ops.md). This includes decision matrices by product type, user scale, and phase.
 
 ---
 
@@ -270,6 +277,7 @@ The QA layer answers "how to verify, what went wrong":
 ## Reference Files
 
 - [`SKILL_lintstart.md`](./SKILL_lintstart.md) — Lightstart mode + general rules
+- [`SKILL_ops.md`](./SKILL_ops.md) — Operations capability timeline (cron jobs, logging, alerting)
 - [`SKILL_maintenance.md`](./SKILL_maintenance.md) — Evaluation & improvement
 - `scoring_criteria.json` — Complete scoring criteria for five categories
 - `scorer.py` — Mean calculation script

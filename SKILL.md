@@ -17,6 +17,10 @@ Select a sub-Skill based on user intent:
 | Leanstart mode (new project) | → [`SKILL_leanstart.md`](./SKILL_leanstart.md) |
 | Precise mode / Layer templates | → [`SKILL_iteration.md`](./SKILL_iteration.md) |
 | How to write Architecture/Data/Business/Interaction/QA | → [`SKILL_iteration.md`](./SKILL_iteration.md) |
+| Create product roadmap / Choose roadmap type | → [`SKILL_roadmap.md`](./SKILL_roadmap.md) |
+| Roadmap for local client / desktop app | → [`SKILL_roadmap_local_client.md`](./SKILL_roadmap_local_client.md) |
+| Roadmap for toC / consumer app | → [`SKILL_roadmap_toc.md`](./SKILL_roadmap_toc.md) |
+| Roadmap for toB / SaaS / enterprise | → [`SKILL_roadmap_tob_saas.md`](./SKILL_roadmap_tob_saas.md) |
 | Evaluate entry quality / Scoring | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
 | Daily Wiki updates / Evaluate → Improve | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
 | Weekly health check / Milestone check | → [`SKILL_maintenance.md`](./SKILL_maintenance.md) |
@@ -38,6 +42,37 @@ Select a sub-Skill based on user intent:
 - Business layer template (core flows, business rules, API, module design)
 - Interaction layer template (UI standards, components, user paths)
 - QA template (test cases, automation, incident postmortem)
+
+### SKILL_roadmap.md — Product Roadmap Router
+- Roadmap type selection (local client / toC / toB)
+- Four-phase framework overview
+- Technical debt tracking
+- Phase transition criteria
+
+### SKILL_roadmap_local_client.md — Local Client Roadmap
+- Desktop app roadmap template with example (code review tool)
+- Cross-platform considerations
+- Auto-update mechanism
+- Plugin ecosystem
+
+### SKILL_roadmap_toc.md — toC App Roadmap
+- Consumer app roadmap template with example (AI writing tool)
+- User growth and retention strategies
+- Viral loops and referral mechanisms
+- Monetization timeline
+
+### SKILL_roadmap_tob_saas.md — toB SaaS Roadmap
+- Enterprise SaaS roadmap template with example (project management)
+- Multi-tenancy architecture
+- SSO and compliance requirements
+- Private deployment strategy
+
+### SKILL_ops.md — Operations Capability Timeline
+- When to introduce cron jobs, logging, alerting
+- Decision matrix by product type and user scale
+- Cost control and team capability requirements
+- Common mistakes and checklists
+- **Referenced by**: `SKILL_iteration.md` (Architecture Layer)
 
 ### SKILL_maintenance.md — Evaluation & Improvement
 - Evaluation system (scoring dimensions, priority, workflow, storage)
