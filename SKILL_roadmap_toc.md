@@ -12,7 +12,7 @@ description: Product roadmap template for consumer applications. Use this Skill 
 
 ---
 
-## Phase 1 — Single Core Feature Available (0-2 months)
+## Phase 1 — Single Core Feature Available
 **Goal**: New users feel "AI writing is actually useful" on first use
 
 ### Requirements Iteration
@@ -40,7 +40,7 @@ description: Product roadmap template for consumer applications. Use this Skill 
 
 ---
 
-## Phase 2 — Polish Core Experience (2-4 months)
+## Phase 2 — Polish Core Experience
 **Goal**: Users who tried once want to come back, 7-day retention > 20%
 
 ### Requirements Iteration
@@ -69,7 +69,7 @@ description: Product roadmap template for consumer applications. Use this Skill 
 
 ---
 
-## Phase 3 — Multi-Module Expansion (4-8 months)
+## Phase 3 — Multi-Module Expansion
 **Goal**: From single-function tool to platform users want to stay on
 
 ### Requirements Iteration
@@ -99,7 +99,7 @@ description: Product roadmap template for consumer applications. Use this Skill 
 
 ---
 
-## Phase 4 — Open Platform & Growth Flywheel (8-12 months)
+## Phase 4 — Open Platform & Growth Flywheel
 **Goal**: Users extend product themselves, growth no longer relies only on paid acquisition
 
 ### Requirements Iteration
@@ -130,12 +130,12 @@ description: Product roadmap template for consumer applications. Use this Skill 
 
 ## Milestone Checkpoints
 
-| Phase | Timeline | Core Metrics | Go / No-Go Decision |
-|-------|----------|--------------|---------------------|
-| Phase 1 | 2 months | 100 registered users, generation success > 95% | If success < 90%, optimize AI Prompt |
-| Phase 2 | 4 months | 7-day retention > 20%, email open > 15% | If retention < 15%, redesign recall mechanism |
-| Phase 3 | 8 months | Payment conversion > 3%, Pro users > 100 | If conversion < 2%, adjust pricing or features |
-| Phase 4 | 12 months | Referral ratio > 30%, API calls > 100k/month | If growth stalls, consider pivot or fundraising |
+| Phase | Core Metrics | Go / No-Go Decision |
+|-------|--------------|---------------------|
+| Phase 1 | 100 registered users, generation success > 95% | If success < 90%, optimize AI Prompt |
+| Phase 2 | 7-day retention > 20%, email open > 15% | If retention < 15%, redesign recall mechanism |
+| Phase 3 | Payment conversion > 3%, Pro users > 100 | If conversion < 2%, adjust pricing or features |
+| Phase 4 | Referral ratio > 30%, API calls > 100k/month | If growth stalls, consider pivot or fundraising |
 
 ---
 

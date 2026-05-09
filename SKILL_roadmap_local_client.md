@@ -12,7 +12,7 @@ description: Product roadmap template for desktop applications. Use this Skill f
 
 ---
 
-## Phase 1 — Single Core Feature Available (0-2 months)
+## Phase 1 — Single Core Feature Available
 **Goal**: Install and scan code, find obvious issues
 
 ### Requirements Iteration
@@ -39,7 +39,7 @@ description: Product roadmap template for desktop applications. Use this Skill f
 
 ---
 
-## Phase 2 — Polish Core Experience (2-4 months)
+## Phase 2 — Polish Core Experience
 **Goal**: Smooth to use, error feedback, auto-update
 
 ### Requirements Iteration
@@ -70,7 +70,7 @@ description: Product roadmap template for desktop applications. Use this Skill f
 
 ---
 
-## Phase 3 — Multi-Module Expansion (4-8 months)
+## Phase 3 — Multi-Module Expansion
 **Goal**: From single tool to complete code quality workbench
 
 ### Requirements Iteration
@@ -100,7 +100,7 @@ description: Product roadmap template for desktop applications. Use this Skill f
 
 ---
 
-## Phase 4 — Plugin System & Ecosystem (8-12 months)
+## Phase 4 — Plugin System & Ecosystem
 **Goal**: Let third-party developers extend tool capabilities
 
 ### Requirements Iteration
@@ -130,12 +130,12 @@ description: Product roadmap template for desktop applications. Use this Skill f
 
 ## Milestone Checkpoints
 
-| Phase | Timeline | Core Metrics | Go / No-Go Decision |
-|-------|----------|--------------|---------------------|
-| Phase 1 | 2 months | 100 downloads, scan success rate > 95% | If crash rate > 5%, prioritize stability fixes |
-| Phase 2 | 4 months | 1000 active users, auto-update success > 95% | If update failure > 10%, redesign update mechanism |
-| Phase 3 | 8 months | 5000 active users, multi-project usage > 50% | If usage < 30%, simplify multi-project switching |
-| Phase 4 | 12 months | Marketplace > 20 plugins, cloud sync > 1000 | If plugin ecosystem inactive, consider official core plugins |
+| Phase | Core Metrics | Go / No-Go Decision |
+|-------|--------------|---------------------|
+| Phase 1 | 100 downloads, scan success rate > 95% | If crash rate > 5%, prioritize stability fixes |
+| Phase 2 | 1000 active users, auto-update success > 95% | If update failure > 10%, redesign update mechanism |
+| Phase 3 | 5000 active users, multi-project usage > 50% | If usage < 30%, simplify multi-project switching |
+| Phase 4 | Marketplace > 20 plugins, cloud sync > 1000 | If plugin ecosystem inactive, consider official core plugins |
 
 ---
 

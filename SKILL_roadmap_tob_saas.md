@@ -12,7 +12,7 @@ description: Product roadmap template for enterprise SaaS applications. Use this
 
 ---
 
-## Phase 1 — Single Core Feature Available (0-3 months)
+## Phase 1 — Single Core Feature Available
 **Goal**: Can demo to a real customer and sign the first deal
 
 ### Requirements Iteration
@@ -41,7 +41,7 @@ description: Product roadmap template for enterprise SaaS applications. Use this
 
 ---
 
-## Phase 2 — Polish Core Experience (3-6 months)
+## Phase 2 — Polish Core Experience
 **Goal**: Customer team can self-serve, no need for on-site support
 
 ### Requirements Iteration
@@ -71,7 +71,7 @@ description: Product roadmap template for enterprise SaaS applications. Use this
 
 ---
 
-## Phase 3 — Multi-Module Expansion (6-12 months)
+## Phase 3 — Multi-Module Expansion
 **Goal**: Cover customer's complete workflow, increase switching cost
 
 ### Requirements Iteration
@@ -101,7 +101,7 @@ description: Product roadmap template for enterprise SaaS applications. Use this
 
 ---
 
-## Phase 4 — Plugin / Open Platform & Compliance (12-18 months)
+## Phase 4 — Plugin / Open Platform & Compliance
 **Goal**: Become customer workflow infrastructure, cannot be easily replaced
 
 ### Requirements Iteration
@@ -135,12 +135,12 @@ description: Product roadmap template for enterprise SaaS applications. Use this
 
 ## Milestone Checkpoints
 
-| Phase | Timeline | Core Metrics | Go / No-Go Decision |
-|-------|----------|--------------|---------------------|
-| Phase 1 | 3 months | Sign first deal (annual fee > $5000) | If no deal in 3 months, re-validate product direction |
-| Phase 2 | 6 months | 5 paying customers, avg team > 10 people | If churn > 50%, optimize product experience |
-| Phase 3 | 12 months | 20 paying customers, renewal rate > 80% | If renewal < 60%, re-evaluate product value |
-| Phase 4 | 18 months | 50 paying customers, private deployment > 5 | If private demand insufficient, adjust strategy |
+| Phase | Core Metrics | Go / No-Go Decision |
+|-------|--------------|---------------------|
+| Phase 1 | Sign first deal (annual fee > $5000) | If no deal in 3 months, re-validate product direction |
+| Phase 2 | 5 paying customers, avg team > 10 people | If churn > 50%, optimize product experience |
+| Phase 3 | 20 paying customers, renewal rate > 80% | If renewal < 60%, re-evaluate product value |
+| Phase 4 | 50 paying customers, private deployment > 5 | If private demand insufficient, adjust strategy |
 
 ---
 
