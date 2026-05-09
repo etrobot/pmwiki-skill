@@ -137,7 +137,7 @@ description: Product roadmap template for enterprise SaaS applications. Use this
 
 | Phase | Core Metrics | Go / No-Go Decision |
 |-------|--------------|---------------------|
-| Phase 1 | Sign first deal (annual fee > $5000) | If no deal in 3 months, re-validate product direction |
+| Phase 1 | Sign first deal (annual fee > $5000) | If unable to sign first deal, re-validate product direction |
 | Phase 2 | 5 paying customers, avg team > 10 people | If churn > 50%, optimize product experience |
 | Phase 3 | 20 paying customers, renewal rate > 80% | If renewal < 60%, re-evaluate product value |
 | Phase 4 | 50 paying customers, private deployment > 5 | If private demand insufficient, adjust strategy |
