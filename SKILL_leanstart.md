@@ -5,45 +5,31 @@ description: Quick-start Wiki for new projects. Use this Skill for scenarios suc
 
 # Project Wiki Lightstart Skill
 
-Focuses on building Wiki from scratch, providing two modes: **Lightstart** (new projects) and **Precise** (refactoring/iteration).
+Quick setup for new project Wiki structure.
 
-Evaluation and improvement process → [`SKILL_maintenance.md`](./SKILL_maintenance.md)
-
----
-
-## I. Two Modes
-
-| | Lightstart Mode | Precise Mode |
-|--|-----------------|--------------|
-| **Use Case** | New project, quick start | Refactoring project, iteration phase, multi-module |
-| **Structure** | Flat, 5 .md files搞定 | Directories by layer, files split by topic |
-| **Principle** | One file covers all, good enough is enough | Split files by topic, each in its place |
-| **Evolution** | Upgrade to Precise when content expands | Add/remove sub-files as needed, structure already in place |
-
-> **Upgrading from Lightstart to Precise**: Split `01-architecture.md` into `01-architecture/` directory, move original .md content into sub-files, update navigation links in `README.md`.
-
-Complete directory structure, splitting timing, and detailed layer templates for Precise mode → [`SKILL_iteration.md`](./SKILL_iteration.md)
+Evaluation and improvement → [`SKILL_maintenance.md`](./SKILL_maintenance.md)  
+Iteration and expansion → [`SKILL_iteration.md`](./SKILL_iteration.md)
 
 ---
 
-## II. Lightstart Mode (New Project)
+## I. Basic Structure
 
 ```
 docs/
-├── README.md            # Facade: project overview, navigation
+├── README.md            # Project overview, navigation
 ├── 01-architecture.md   # Tech stack, standards, deployment
 ├── 02-data.md           # Table structure, ER diagram, cache
 ├── 03-business.md       # Core logic, flowcharts, API
 ├── 04-interaction.md    # Frontend logic, UI design
 ├── 05-qa.md             # Test cases, incident postmortem
-└── assets/              # Only folder: stores images, screenshots
+└── assets/              # Images and attachments
 ```
 
-> **5 .md + 1 assets + README**, each file covers the full content of its layer, no sub-files.
+**5 .md files + 1 assets directory + README**. Each file covers the full content of its layer. Split into subdirectories when content grows.
 
-### One-Sentence Positioning per Layer
+### Layer Content Positioning
 
-| Layer | Question Answered | What to Write in Lightstart Mode |
+| Layer | Question Answered | What to Write |
 |-------|-------------------|----------------------------------|
 | **Architecture** | How the system is built, why | Tech stack + coding standards + infrastructure + architecture decisions |
 | **Data** | What the data looks like, where stored, how it flows | Table structure + data dictionary + cache + migration + security |
@@ -53,11 +39,11 @@ docs/
 
 ---
 
-## III. General Rules
+## II. General Rules
 
-### README.md Facade
+### README.md Entry Point
 
-Regardless of mode, `README.md` is the entry point and must include:
+`README.md` is the documentation entry point and must include:
 
 ```markdown
 # Project Name
@@ -68,11 +54,11 @@ Regardless of mode, `README.md` is the entry point and must include:
 ## Documentation Navigation
 | Document | Description |
 |----------|-------------|
-| [01-Architecture](./01-architecture/) | Tech stack, deployment, architecture decisions |
-| [02-Data](./02-data/) | Table structure, cache, data dictionary |
-| [03-Business](./03-business/) | Core flows, interfaces, module design |
-| [04-Interaction](./04-interaction/) | UI standards, components, user paths |
-| [05-QA](./05-qa/) | Test cases, incident postmortem |
+| [01-Architecture](./01-architecture.md) | Tech stack, deployment, architecture decisions |
+| [02-Data](./02-data.md) | Table structure, cache, data dictionary |
+| [03-Business](./03-business.md) | Core flows, interfaces, module design |
+| [04-Interaction](./04-interaction.md) | UI standards, components, user paths |
+| [05-QA](./05-qa.md) | Test cases, incident postmortem |
 ```
 
 ### Asset Management
@@ -98,7 +84,7 @@ All asset files are stored uniformly in `assets/`, **not mixed with .md files**:
 
 ## Reference Files
 
-- [`SKILL_iteration.md`](./SKILL_iteration.md) — Precise mode: complete directory structure + detailed layer templates
+- [`SKILL_iteration.md`](./SKILL_iteration.md) — Iteration phase: complete directory structure + detailed layer templates
 - [`SKILL_maintenance.md`](./SKILL_maintenance.md) — Evaluation & improvement: scoring system, daily process, health check, change management, closing migration
 - `scoring_criteria.json` — Complete scoring criteria for five categories (with descriptions)
 - `scorer.py` — Mean calculation script (single / batch / milestone urgent mode)

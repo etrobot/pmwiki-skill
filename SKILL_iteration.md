@@ -1,37 +1,37 @@
 ---
 name: Project Wiki Iteration
-description: Detailed structure and templates for the precise Wiki mode. Use this Skill for scenarios such as "precise mode", "iteration mode", "refactor project Wiki", "multi-module Wiki", "Wiki layer templates", "architecture layer template", "data layer template", "business layer template", "interaction layer template", "QA template", etc.
+description: Detailed structure and templates for Wiki iteration phase. Use this Skill for scenarios such as "iteration phase", "refactor project Wiki", "multi-module Wiki", "Wiki layer templates", "architecture layer template", "data layer template", "business layer template", "interaction layer template", "QA template", etc.
 ---
 
-# Precise Mode: Complete Directory Structure + Detailed Layer Templates
+# Project Wiki Iteration: Complete Directory Structure + Detailed Layer Templates
 
-Lightstart mode overview → [`SKILL_lintstart.md`](./SKILL_lintstart.md)
+Lightstart overview → [`SKILL_leanstart.md`](./SKILL_leanstart.md)
 
 ---
 
-## I. Precise Mode Directory Structure
+## I. Expanded Directory Structure
 
 ```
 docs/
-├── README.md                # Facade: project overview, navigation index
+├── README.md                # Project overview, navigation index
 ├── assets/                  # Global assets: images, attachments, scripts
 │   ├── images/
 │   └── files/
 │
-├── 01-architecture/         # [Architecture Layer]
+├── 01-architecture/         # Architecture Layer
 │   ├── tech-stack.md        # Tech stack + coding standards
 │   ├── infrastructure.md    # Servers, network, CI/CD pipeline
 │   ├── ops-capability.md    # Operations: logging, alerting, cron jobs timeline
 │   └── decisions/           # Architecture decision records: "why this design"
 │
-├── 02-data/                 # [Data Layer]
+├── 02-data/                 # Data Layer
 │   ├── schema/              # Database design
 │   │   ├── er-diagram.md    # ER diagram
 │   │   └── migrations.md    # Migration records
 │   ├── cache.md             # Redis/cache strategy
 │   └── dictionary.md        # Data dictionary (field details)
 │
-├── 03-business/             # [Business Layer]
+├── 03-business/             # Business Layer
 │   ├── core-flows/          # Core business logic
 │   │   ├── order-flow.md    # Order flow
 │   │   └── payment-flow.md  # Payment flow
@@ -39,17 +39,17 @@ docs/
 │   │   └── swagger.yaml     # or markdown interface definitions
 │   └── modules/             # Module detailed design (expand as needed)
 │
-├── 04-interaction/          # [Interaction Layer]
+├── 04-interaction/          # Interaction Layer
 │   ├── ui-design.md         # UI standards, design draft links
 │   ├── components.md        # Core component descriptions
 │   └── user-journey.md      # User operation paths
 │
-├── 05-qa/                   # [QA]
+├── 05-qa/                   # QA
 │   ├── test-cases/          # Core test cases
 │   ├── automation.md        # Automation test configuration
 │   └── incidents/           # Incident postmortems and known issues
 │
-└── 06-resources/            # [Resources] (optional, split as needed)
+└── 06-resources/            # Resources (optional, split as needed)
     ├── third-party.md       # Third-party services (payments, SMS)
     └── tools.md             # Development tool configuration
 ```
@@ -276,7 +276,7 @@ The QA layer answers "how to verify, what went wrong":
 
 ## Reference Files
 
-- [`SKILL_lintstart.md`](./SKILL_lintstart.md) — Lightstart mode + general rules
+- [`SKILL_leanstart.md`](./SKILL_leanstart.md) — Lightstart + general rules
 - [`SKILL_ops.md`](./SKILL_ops.md) — Operations capability timeline (cron jobs, logging, alerting)
 - [`SKILL_maintenance.md`](./SKILL_maintenance.md) — Evaluation & improvement
 - `scoring_criteria.json` — Complete scoring criteria for five categories
